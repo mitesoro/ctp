@@ -77,9 +77,9 @@ target_link_libraries(hw_grpc_proto
 #            ${_PROTOBUF_LIBPROTOBUF})
 #endforeach()
 
-add_executable(greeter_server "src/greeter_server.cc" "src/yd.cpp")
+add_executable(ctp_server "src/server.cc" "src/yd.cpp")
 #add_executable(greeter_server "src/main.cpp" "src/yd_info.cpp")
-target_link_libraries(greeter_server
+target_link_libraries(ctp_server
         hw_grpc_proto
         absl::flags
         absl::flags_parse
@@ -88,4 +88,4 @@ target_link_libraries(greeter_server
         ${_PROTOBUF_LIBPROTOBUF}
         hiredis)
 # 加载libyd.so
-target_link_libraries(greeter_server yd)
+target_link_libraries(ctp_server yd)
